@@ -1,0 +1,330 @@
+:root{
+    --primario:#ff7043;
+    --secundario:#fff3e0;
+    --oscuro:#333;
+    --claro:#ffffff;
+    --gris:#f5f5f5;
+    --sombra:0 5px 20px rgba(0,0,0,.15);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#fafafa;
+    color:var(--oscuro);
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:white;
+    box-shadow:var(--sombra);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:bold;
+    color:var(--primario);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--oscuro);
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--primario);
+}
+
+/* HERO */
+
+.hero{
+    height:85vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url("https://images.unsplash.com/photo-1490645935967-10de6ba17061");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content{
+    max-width:800px;
+    color:white;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.3rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:var(--primario);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SECCIONES */
+
+.recetas,
+.comentarios{
+    padding:80px 8%;
+}
+
+.recetas h2,
+.comentarios h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.2rem;
+}
+
+/* CARDS */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card-receta{
+    width:320px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:var(--sombra);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card-receta:hover{
+    transform:translateY(-10px);
+}
+
+.card-receta img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-receta h3{
+    padding:15px;
+}
+
+.card-receta p{
+    padding:0 15px 20px;
+    color:#666;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:750px;
+    max-height:90vh;
+    overflow-y:auto;
+
+    border-radius:20px;
+    padding:30px;
+
+    position:relative;
+}
+
+.modal-content img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.modal-content h2{
+    margin-bottom:20px;
+}
+
+.modal-content h3{
+    margin-top:20px;
+    margin-bottom:10px;
+    color:var(--primario);
+}
+
+.modal-content pre{
+    white-space:pre-wrap;
+    font-family:inherit;
+    line-height:1.8;
+}
+
+.cerrar{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:35px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* COMENTARIOS */
+
+.comentarios{
+    background:white;
+}
+
+.comentarios form{
+    max-width:700px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.comentarios input,
+.comentarios textarea{
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.comentarios textarea{
+    min-height:150px;
+    resize:none;
+}
+
+.comentarios button{
+    background:var(--primario);
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+    font-size:1rem;
+}
+
+.comentarios button:hover{
+    transform:translateY(-2px);
+}
+
+#listaComentarios{
+    max-width:700px;
+    margin:30px auto 0;
+}
+
+.comentario{
+    background:var(--gris);
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.comentario h4{
+    margin-bottom:10px;
+    color:var(--primario);
+}
+
+/* FOOTER */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .card-receta{
+        width:100%;
+        max-width:350px;
+    }
+}
+.buscador{
+    margin-top:30px;
+}
+
+.buscador input{
+    width:100%;
+    max-width:450px;
+    padding:15px 20px;
+    border:none;
+    border-radius:50px;
+    font-size:1rem;
+    outline:none;
+}

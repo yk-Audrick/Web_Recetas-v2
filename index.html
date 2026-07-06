@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Casero | Blog de Recetas</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🍽️ Sabor Casero
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="dulces.html">Dulces</a></li>
+            <li><a href="salados.html">Salados</a></li>
+            <li><a href="sinhorno.html">Sin Horno</a></li>
+            <li><a href="comentarios.html">Comentarios</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h1>Las Mejores Recetas Caseras</h1>
+
+        <p>
+            Descubre recetas deliciosas, fáciles y rápidas para sorprender a toda tu familia.
+        </p>
+
+        <a href="dulces.html" class="btn">
+            Explorar Recetas
+        </a>
+
+        <div class="buscador">
+            <input
+                type="text"
+                id="buscador"
+                placeholder="🔍 Buscar receta..."
+                onkeyup="buscarRecetas()">
+        </div>
+
+    </div>
+
+</section>
+
+<section class="comentarios" id="comentarios">
+
+    <h2>💬 Comentarios</h2>
+
+    <form id="formComentario">
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Tu nombre"
+            required>
+
+        <textarea
+            id="comentario"
+            placeholder="Escribe tu comentario"
+            required></textarea>
+
+        <button type="submit">
+            Publicar Comentario
+        </button>
+
+    </form>
+
+    <div id="listaComentarios"></div>
+
+</section>
+
+<div id="modal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="cerrar" onclick="cerrarModal()">
+            &times;
+        </span>
+
+        <img id="modalImg" src="">
+
+        <h2 id="modalTitulo"></h2>
+
+        <h3>📝 Ingredientes</h3>
+
+        <pre id="modalIngredientes"></pre>
+
+        <h3>👨‍🍳 Preparación</h3>
+
+        <pre id="modalPreparacion"></pre>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        © 2026 Sabor Casero - Blog de Recetas
+    </p>
+
+</footer>
+
+<script src="../js/recetas.js"></script>
+<script src="../js/script.js"></script>
+```
+
+</body>
+
+</html>
